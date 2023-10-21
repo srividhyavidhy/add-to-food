@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="foodHeading text-center">
+        <h3 class="mb-3">Exclusive Foods</h3>
+        <ul class="list-unstyled d-flex flex-md-row justify-content-center">
+            <li *ngFor="let category of categorys" (click)="loadFoodCategory(category._id)" >
+                <a href="" class="m-4 text-decoration-none text-danger fw-semibold" [ngClass]="selectedCategory == category._id?'text-danger':'text-black'">
+                   {{category.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="btn btn-primary" routerLink="/create-food">Add-Food</div>
+<div class="col-8 p-3">
+    <div class="row mt-3">
+        <div class="col-lg-3 col-md-0" *ngFor="let food of foodArray" (click)="loadFood(food._id)">
+            <div class="box-shadow">
+                <div class="card mt-2" [ngClass]="selectedFood == food._id?'text-danger':'text-black'">
+                    <img class="card-img-top img-fluid" src="{{food.image}}">
+                </div>
+                <div class="card-body">
+                    <h6 class="card-titel">{{food.name}}</h6>
+                    <h6 class="card-text">{{food.quantity}}</h6>
+                    <p class="text-success ms-0">35% off<span class="p-3">{{food.price | currency:'INR'}}</span> </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="model-body">
+    <div class="container ">
+        <div class="row">
+            <div class="col-5">
+                <label for="">ID</label>
+                <input [(ngModel)]="registerobj._id" type="text" class="form-control">
+                <label for="">Name</label>
+                <input [(ngModel)]="registerobj.name" type="text" class="form-control">
+                <label for="">Email</label>
+                <input [(ngModel)]="registerobj.email" type="email" class="form-control">
+                <label for="">Password</label>
+                <input [(ngModel)]="registerobj.password" type="password" class="form-control">
+                <label for="">PhoneNumber</label>
+                <input [(ngModel)]="registerobj.phonenumber" type="tel" class="form-control">
+
+            </div>
+        </div>
+        <div class="model-footer">
+            <button type="button" class="btn btn-primary" (click)="onRegister()">Register</button>
+        </div>
+    </div>
+
+   
+</div>
