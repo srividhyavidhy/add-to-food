@@ -1,0 +1,35 @@
+<div class="form">
+    <form class="signin-form">
+        <div class="form-group mt-3">
+            <input type="text" name="name" [(ngModel)]="loginObj.name" class="form-control" required>
+            <label class="form-control-placeholder" for="name">UserName</label>
+        </div>
+        <div class="form-group mt-4">
+            <input type="password" id="password-field" name="password" [(ngModel)]="loginObj.password" class="form-control" required>
+            <label class="form-control-placeholder" for="password">Password</label>
+            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+        </div>
+        <div class="form-group">
+            <button type="button" (click)="onLogin" class="my-4 form-control btn btn-primary rounded submit px-3">
+                SignIn
+            </button>
+        </div> 
+        <div class="form-group d-md-flex">
+            <div class="w-50 text-left">
+                <label class="checkbox-wrap checkbox-primary mb-0">
+                    RememberMe
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                </label> 
+                <div class="w-50 text-md-right">
+                    <a href="login">Forgot Password</a>
+                </div>
+                <p class="text-center mb-lg-4 mt-4">Not a Member?
+                    <a data-toggle="tab" routerLink="/register">Sign Up</a>
+                </p>
+            </div>
+          
+        </div>
+    </form>
+   
+</div>

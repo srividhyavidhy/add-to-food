@@ -9,6 +9,7 @@ import { FoodsComponent } from './components/foods/foods.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateFoodComponent } from './components/create-food/create-food.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RegisterComponent } from './components/register/register.component';
     CartComponent,
     FoodsComponent,
     CreateFoodComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

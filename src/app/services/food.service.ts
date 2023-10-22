@@ -20,17 +20,20 @@ getFoods():Observable<any[]>{
 getFoodCategorys():Observable<any[]>{
   return this.http.get<any[]>("http://localhost:3000/api/foodcategorys");
 }
-getFood(_id:string):Observable<any[]>{
-  return this.http.get<any[]>("http://localhost:3000/api/foods/"+_id);
+
+getFoodCategory(_id:string): Observable<any[]> {
+  return this.http.get<any[]>("http://localhost:3000/api/foods" +_id);
 }
 
-
 createFood(_id:any):Observable<any>{
-
   return this.http.post<any>("http://localhost:3000/api/foods", _id)
 }
 
 register(_id:any):Observable<any>{
+
+  return this.http.post<any>("http://localhost:3000/api/users", _id)
+}
+login(_id:any):Observable<any>{
 
   return this.http.post<any>("http://localhost:3000/api/users", _id)
 }

@@ -4,13 +4,15 @@ import { FoodsComponent } from './components/foods/foods.component';
 import { CartComponent } from './components/cart/cart.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CreateFoodComponent } from './components/create-food/create-food.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'foods', pathMatch: 'full' },
   { path:  'foods', component:  FoodsComponent},
   { path:  'cart', component:  CartComponent},
   { path:  'register', component:  RegisterComponent},
-  { path: 'create-food', component: CreateFoodComponent}
+  { path: 'create-food', component: CreateFoodComponent},
+  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

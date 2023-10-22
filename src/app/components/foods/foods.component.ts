@@ -10,7 +10,7 @@ import { FoodService } from 'src/app/services/food.service';
 export class FoodsComponent implements OnInit{
 foodArray:any[]=[];
 categorys:any[]=[];
-selectedFood:string='';
+
 selectedCategory:string='';
  constructor(private food:FoodService) {}
  ngOnInit(): void {
@@ -22,21 +22,18 @@ selectedCategory:string='';
     this.foodArray=res;
   });
  }
- loadFood(_id:string){
-  this.selectedCategory = _id;
-  this.food.getFood(_id).subscribe((res:any)=>{
-    this.foodArray=res;
-  })
- }
+
  loadFoodCategorys(){
   this.food.getFoodCategorys().subscribe((res:any)=>{
     this.categorys=res;
   });
  }
- loadFoodCategory(_id:string){
+ getFoodCategory(_id:string){
   this.selectedCategory = _id;
-  this.food.getFood(_id).subscribe((res:any)=>{
-    this.categorys=res;
+  this.food.getFoodCategory(_id).subscribe((res:any)=>{
+    this.foodArray=res;
   })
- }
+}
+
+
 }

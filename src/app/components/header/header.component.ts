@@ -9,9 +9,17 @@ import { FoodService } from 'src/app/services/food.service';
 export class HeaderComponent implements OnInit{
   foodArray:any[]=[];
 selectedFood:string='';
-  constructor(private food:FoodService){}
+loggedObj: any={};
+  constructor(private food:FoodService){
+    const localData = localStorage.getItem('amazon-user');
+    if(localData!=null){
+      const parseObj=JSON.parse(localData);
+      this.loggedObj=parseObj
+    }
+  }
   ngOnInit(): void {
     
   }
+  
  
 }

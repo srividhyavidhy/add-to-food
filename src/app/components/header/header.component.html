@@ -12,13 +12,23 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="foods">Foods</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="create-food">Add-Food</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="register">Register</a>
-          </li>
+          <div class="row">
+            <div class="col-12">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person-circle"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  
+                  <li><a class="dropdown-item" aria-current="page" routerLink="login">Login</a></li>
+                  <li><a class="dropdown-item" aria-current="page" routerLink="register">Register</a></li>
+                </ul>
+              </li>
+            </div>
+       </div>
         </ul>
+ 
+       
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search Food" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
