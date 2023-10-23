@@ -18,7 +18,7 @@ export class CreateFoodComponent implements OnInit{
     "price":"",
     "image": ""
   }
-  constructor(private food:FoodService){}
+  constructor(private food:FoodService, private router:Router){}
 
   ngOnInit(): void {
     
@@ -26,12 +26,13 @@ export class CreateFoodComponent implements OnInit{
 
   onSave(){
    this.food.createFood(this.foodobj).subscribe((res:any)=>{
-     if(res.result){
-      alert("Food Creation Done")
+     if(res){
+      alert("Food Creation Done");
+      this.router.navigate(['/foods']);
      }
      else{
-
-      alert(res.message)
+      alert("Failed to create employee");
+      
      }
 
    })

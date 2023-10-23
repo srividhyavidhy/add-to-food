@@ -1,35 +1,27 @@
-<div class="form">
-    <form class="signin-form">
-        <div class="form-group mt-3">
-            <input type="text" name="name" [(ngModel)]="loginObj.name" class="form-control" required>
-            <label class="form-control-placeholder" for="name">UserName</label>
+<div class="topContainer">
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+        <div class="signup">
+            <form>
+                <label for="chk" aria-hidden="true">Signup</label><br>
+                <label for="_id">ID</label>
+                <input  type="id" class="form-control" name="_id" placeholder="ID" [(ngModel)]="signupObj._id">
+                <label for="name">Name</label>
+                <input type="text" name="txt" placeholder="User name" class="form-control" [(ngModel)]="signupObj.name">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Email" class="form-control" [(ngModel)]="signupObj.email">
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Password" class="form-control" [(ngModel)]="signupObj.password">
+                <button (click)="onSignUp()">Sign up</button>
+            </form>
         </div>
-        <div class="form-group mt-4">
-            <input type="password" id="password-field" name="password" [(ngModel)]="loginObj.password" class="form-control" required>
-            <label class="form-control-placeholder" for="password">Password</label>
-            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+        <div class="login">
+            <form>
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="email" name="email" placeholder="Email" class="form-control" [(ngModel)]="loginObj.email">
+                <input type="password" name="password" placeholder="Password" class="form-control" [(ngModel)]="loginObj.password">
+                <button (click)="onLogin()">Login</button>
+            </form>
         </div>
-        <div class="form-group">
-            <button type="button" (click)="onLogin" class="my-4 form-control btn btn-primary rounded submit px-3">
-                SignIn
-            </button>
-        </div> 
-        <div class="form-group d-md-flex">
-            <div class="w-50 text-left">
-                <label class="checkbox-wrap checkbox-primary mb-0">
-                    RememberMe
-                    <input type="checkbox" checked>
-                    <span class="checkmark"></span>
-                </label> 
-                <div class="w-50 text-md-right">
-                    <a href="login">Forgot Password</a>
-                </div>
-                <p class="text-center mb-lg-4 mt-4">Not a Member?
-                    <a data-toggle="tab" routerLink="/register">Sign Up</a>
-                </p>
-            </div>
-          
-        </div>
-    </form>
-   
+    </div>
 </div>

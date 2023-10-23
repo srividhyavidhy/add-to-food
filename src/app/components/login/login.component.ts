@@ -1,39 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FoodService } from 'src/app/services/food.service';
-
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-loginObj: any= {
-  "name":"",
-  "password":""
-}
-loggedObj: any={};
-  constructor(private food:FoodService){
-    const localData = localStorage.getItem('users');
-    if(localData!=null){
-      const parseObj=JSON.parse(localData);
-      this.loggedObj=parseObj
-    }
+export class LoginComponent implements OnInit{
+  users: any[]=[];
+signupUsers:any[]=[];
+signupObj:any={
+_id:'',  
+name:'',
+email:'',
+password:''
+};
+loginObj:any={
+  email:'',
+  password:''
+  };
+constructor(private food:FoodService){}
+ngOnInit(): void {
+  const localData = localStorage.getItem('signUpUsers');
+  if(localData !=null){
+    this.signupUsers = JSON.parse(localData);
   }
+}
+onSignUp(){
+this.signupUsers.push(this.signupObj);
+localStorage.setItem('signUpUsers', JSON.stringify(this.signupUsers));
+this.signupObj={
+  _id:'',
+  name:'',
+  email:'',
+  password:''
+}
+}
 onLogin(){
-  this.food.login(this.loginObj).subscribe((res:any)=>{
-    if(res.result){
-     alert("User Login success");
-     this.loggedObj=res;
-     localStorage.setItem('users',JSON.stringify(res))
-    }
-    else{
 
-     alert(res.message)
-    }
-
-  })
-
- }
-
+const isUserExist = this.signupUsers.find(m => m.name == this.loginObj.name && m.password == this.loginObj.password); 
+if(isUserExist != undefined){
+  alert('User Login Successfully');
+} else {
+  alert('Wrong credentials');
+}
+}
 }
 

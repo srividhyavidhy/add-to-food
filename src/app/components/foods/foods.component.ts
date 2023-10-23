@@ -31,7 +31,7 @@ selectedCategory:string='';
  getFoodCategory(_id:string){
   this.selectedCategory = _id;
   this.food.getFoodCategory(_id).subscribe((res:any)=>{
-    this.foodArray=res;
+    this.categorys=res;
   })
 }
 
