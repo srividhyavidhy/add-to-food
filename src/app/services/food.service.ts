@@ -33,9 +33,9 @@ register(_id:any):Observable<any>{
 
   return this.http.post<any>("http://localhost:3000/api/users", _id)
 }
-login(_id:any):Observable<any>{
+logins(login:any):Observable<any>{
 
-  return this.http.post<any>("/users", _id)
+  return this.http.post<any>("http://localhost:3000/api/logins", login)
 }
  
 getUser(_id: string): Observable<any> {
