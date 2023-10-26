@@ -38,16 +38,15 @@ logins(login:any):Observable<any>{
   return this.http.post<any>("http://localhost:3000/api/logins", login)
 }
  
-getUser(_id: string): Observable<any> {
+getUsers(): Observable<any> {
+  return this.http.get<any>(`http://localhost:3000/api/users`);
+}
+
+updateFood(_id: string, food:Foods ): Observable<string> {
+  return this.http.put(`http://localhost:3000/api/users`+food._id,food, { responseType: 'text' });
+}
+deleteUser(_id: string): Observable<any> {
   return this.http.get<any>(`http://localhost:3000/api/users/${_id}`);
 }
 
-
-updateUser(_id: string, food:Foods ): Observable<string> {
-  return this.http.put(`http://localhost:3000/api/users/${_id}`, food, { responseType: 'text' });
-}
-
-deleteUser(_id: string): Observable<string> {
-  return this.http.delete(`http://localhost:3000/api/users/${_id}`, { responseType: 'text' });
-}
 }
