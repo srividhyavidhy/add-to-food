@@ -1,36 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodService } from 'src/app/services/food.service';
+
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { UsersService } from 'src/app/services/users.service';
+import { FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  
+loginForm: any;
 
-loginObj:any={
-  email:'',
-  password:''
-  };
-constructor(private food:FoodService , private router:Router){}
-ngOnInit(): void {
- 
+constructor(private user:UsersService , private router:Router, public fb:FormBuilder){
+this.loginForm = this.fb.group({
+  email:[""],
+  password:[""]
+
+})
+
 }
-onLogin(){
-  this.food.logins(this.loginObj).subscribe((res:any)=>{
-    if(res){
-     alert("Login Creation Done");
-     this.router.navigate(['/register']);
-    }
-    else{
-     alert("Failed to create login");
-     
-    }
+ngOnInit(): void {
+  
+}
+SubmitForm(){
 
-  })
-
+  console.log(this.loginForm.value)
+}
  }
 
-}

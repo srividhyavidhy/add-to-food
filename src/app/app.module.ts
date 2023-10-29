@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateFoodComponent } from './components/create-food/create-food.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { UpdateuserComponent } from './components/updateuser/updateuser.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './components/login/login.component';
     FoodsComponent,
     CreateFoodComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    UpdateuserComponent
   ],
   imports: [
     BrowserModule,

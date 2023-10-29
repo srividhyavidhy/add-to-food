@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="model-body">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-10">
+                    <label for="_id">ID</label>
+                    <input [(ngModel)]="updateobj._id" type="id" class="form-control">
+                    <label for="name">Name</label>
+                    <input [(ngModel)]="updateobj.name" type="text" class="form-control">
+                    <label for="email">Email</label>
+                    <input [(ngModel)]="updateobj.email" type="email" class="form-control">
+                    <label for="password">Password</label>
+                    <input [(ngModel)]="updateobj.password" type="password" class="form-control">
+                    <label for="phonenumber">PhoneNumber</label>
+                    <input [(ngModel)]="updateobj.phonenumber" type="tel" class="form-control">
+    
+                </div>
+            </div>
+        </div>
+        <div class="model-footer">
+            <button type="button"  class="btn btn-secondary md-3">Reset</button>
+            <button type="button"  class="btn btn-primary col-lg-3" >Register</button>
+          </div>
+       
+       
+</div>

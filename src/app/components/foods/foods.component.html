@@ -4,7 +4,7 @@
         <h3 class="mb-3">Exclusive Foods</h3>
         <ul class="list-unstyled d-flex flex-md-row justify-content-center">
             <li *ngFor="let category of categorys" (click)="getFoodCategory(category._id) " >
-                <a class="m-4 text-decoration-none text-black fw-semibold" [ngClass]="selectedCategory == category._id?'text-danger':'text-black'">
+                <a class="m-4 text-decoration-none text-info fw-semibold" [ngClass]="selectedCategory == category._id?'text-danger':'text-info'">
                    {{category.name}}
                 </a>
             </li>
@@ -31,4 +31,4 @@
     </div>
 </div>
 </div>
-<a routerLink="['/edit',food._id]" class="btn btn-success">Edit</a>
+
