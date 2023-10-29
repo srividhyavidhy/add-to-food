@@ -11,6 +11,9 @@ import { CreateFoodComponent } from './components/create-food/create-food.compon
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { UpdateuserComponent } from './components/updateuser/updateuser.component';
+import { UpdatefoodComponent } from './components/updatefood/updatefood.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { UpdateuserComponent } from './components/updateuser/updateuser.componen
     CreateFoodComponent,
     RegisterComponent,
     LoginComponent,
-    UpdateuserComponent
+    UpdateuserComponent,
+    UpdatefoodComponent,
+    UserListComponent,
+  
   ],
   imports: [
     BrowserModule,

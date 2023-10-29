@@ -8,26 +8,36 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./updateuser.component.css']
 })
 export class UpdateuserComponent implements OnInit{
-  updateobj:any={
+_id:any;
+userobj:any={
     "_id": "",
     "name": "",
     "email":"",
     "password":"",
      "phonenumber": ""
   }
-constructor(private user:UsersService,private router:Router){}
+  errors: any;
+constructor(private user:UsersService,private route:ActivatedRoute, private router: Router){}
 ngOnInit(): void {
- 
-}
-updateData(value: any) {
-  let body = {
-    name: value.name,
-    age: value.age
-  }
+ this._id = this.route.snapshot.paramMap.get('_id');
+ alert(this._id);
 
-  this.user.updateUser(body, `2`)
-    .subscribe(response => {
-      console.log(response)
-    })
+ this.user.getUser(this._id).subscribe((res)=>{
+  this.userobj = res
+ })
 }
+onUpdate(){
+this.user.updateUser(this.userobj,this._id).subscribe((res)=>{
+  if(res){
+    alert("Update user successfully");
+    this.router.navigate(['/userlist']);
+   }
+   else{
+    alert("Failed to update user");
+    
+   }
+
+ })
+
 }
+} 

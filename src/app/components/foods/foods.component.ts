@@ -12,7 +12,7 @@ foodArray:any[]=[];
 categorys:any[]=[];
 
 selectedCategory:string='';
- constructor(private food:FoodService) {}
+ constructor(private food:FoodService, private router:Router) {}
  ngOnInit(): void {
  this.loadFoods();
  this.loadFoodCategorys();
@@ -35,5 +35,22 @@ selectedCategory:string='';
   })
 }
 
+deleteFood(event:any, _id:string){
+  if(confirm('Are your sure you want to delete this data ?'))
+  {
+    event.target.innerText ="Deleting....";
 
+    this.food.deleteFood(_id).subscribe((res:any)=>{
+      this.loadFoods();
+      if(res){
+        alert("User Creation Done");
+        this.router.navigate(['/foods']);
+       }
+       else{
+        alert("Failed to create employee");
+        
+       }
+    })
+  }
+}
 }

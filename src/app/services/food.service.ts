@@ -28,7 +28,16 @@ getFoodCategory(_id: string): Observable<any> {
 createFood(_id:any):Observable<any>{
   return this.http.post<any>("http://localhost:3000/api/foods", _id)
 }
+getFood(_id: any):Observable<any>{
+  return this.http.get<any>(`http://localhost:3000/api/foods/${_id}`)
+}
 
+updateFood(data:any, _id: any): Observable<any> {
+  return this.http.put<any>(`http://localhost:3000/api/foods/${_id}`,data)
+}
+deleteFood(_id:string):Observable<any>{
+return this.http.delete(`http://localhost:3000/api/foods/${_id}`)
+}
 
 
 

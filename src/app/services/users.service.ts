@@ -23,12 +23,12 @@ export class UsersService {
     return this.http.get<any>(`http://localhost:3000/api/users`);
   }
 
-  getCurrentData(_id: any){
-    return this.http.get('http://localhost:3000/api/users/${_id}')
+  getUser(_id: any):Observable<any>{
+    return this.http.get<any>(`http://localhost:3000/api/users/${_id}`)
   }
 
-  updateUser(data: any, _id: string): Observable<any> {
-    return this.http.put<any>(`http://localhost:3000/api/users/${_id}`, data)
+  updateUser(data:any, _id: any): Observable<any> {
+    return this.http.put<any>(`http://localhost:3000/api/users/${_id}`,data)
 }
 deleteUser(_id:string):Observable<any>{
   return this.http.delete(`http://localhost:3000/api/users/${_id}`)

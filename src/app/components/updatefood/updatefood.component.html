@@ -1,0 +1,21 @@
+<div class="model-body">
+    <div class="container ">
+        <div class="row">
+            <div class="col-5">
+                <label for="">ID</label>
+                <input [(ngModel)]="foodsobj._id" type="_id" class="form-control">
+                <label for="">Name</label>
+                <input [(ngModel)]="foodsobj.name" type="text" class="form-control">
+                <label for="">Quantity</label>
+                <input [(ngModel)]="foodsobj.quantity" type="text" class="form-control">
+                <label for="">Price</label>
+                <input [(ngModel)]="foodsobj.price" type="price" class="form-control">
+                <label for="">Image</label>
+                <input [(ngModel)]="foodsobj.image" type="text" class="form-control">
+
+            </div>
+        </div>
+        <div class="model-footer">
+            <button type="button" class="btn btn-primary" (click)="onUpdate()">Update</button>
+        </div>
+    </div>
