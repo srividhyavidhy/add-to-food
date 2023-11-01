@@ -1,1 +1,53 @@
-<p>cart works!</p>
+<ng-container *ngIf="true">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let employee of foodArray">
+                <td>{{employee._id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.quantity}}</td>
+                <td>{{employee.price}}</td>
+                <td><img src="{{employee.image}}"></td>
+               <td><a routerLink="/update/{{employee._id}}">
+                <i class="bi bi-pencil mx-5" style="font-size: 30px;  color: rgb(67, 18, 112); cursor: pointer;">
+                </i>
+            </a>
+                <i class="bi bi-trash3 mx-5" style="font-size: 30px; color: red; cursor: pointer;" 
+                (click)="deleteFood($event, employee._id)" >
+            </i>
+            <i class="bi bi-cloud-plus" style="font-size: 30px; color: red; cursor: pointer;" 
+            routerLink="/create-food" >
+        </i>
+            </td>
+             
+            </tr>
+        </tbody>
+    </table>
+    
+</ng-container>
+
+
+
+
+<ng-container *ngIf="false">
+    <div class="container">
+        <h5 class="title text-center" >My Cart</h5>
+        <div class="text-center">
+            <img src="data:image/png;base64,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" alt="">
+            <h4>Your Cart Is Empty!</h4>
+            <h6>Add Food TO It Now</h6>
+            <button class="btn btn-primary">Order Now</button>
+        </div>
+    </div>
+    
+</ng-container>

@@ -8,12 +8,17 @@ import { LoginComponent } from './components/login/login.component';
 import { UpdateuserComponent } from './components/updateuser/updateuser.component';
 import { UpdatefoodComponent } from './components/updatefood/updatefood.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'foods', pathMatch: 'full' },
-  { path:  'foods', component:  FoodsComponent},
+  { path: '', redirectTo: 'categorys', pathMatch: 'full' },
+  { path: 'cart', component: CartComponent},
+  { path: 'categorys', component: CategoriesComponent},
+  { path: 'foods', component: FoodsComponent},
+  { path: 'foods/:_id', component: FoodsComponent},
   { path: 'updatefood/:_id', component: UpdatefoodComponent},
-  { path:  'cart', component:  CartComponent},
+  { path:  'cart/:_id', component:  CartComponent},
+  { path:  'search/:searchTerm', component:  FoodsComponent},
   { path:  'register', component:  RegisterComponent},
   { path:  'userlist', component: UserListComponent},
   { path: 'create-food', component: CreateFoodComponent},

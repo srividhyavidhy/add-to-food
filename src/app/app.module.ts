@@ -13,6 +13,9 @@ import { LoginComponent } from './components/login/login.component';
 import { UpdateuserComponent } from './components/updateuser/updateuser.component';
 import { UpdatefoodComponent } from './components/updatefood/updatefood.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { SearchComponent } from './components/search/search.component';
+import { FilterPipe } from './filter.pipe';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 
 @NgModule({
@@ -27,6 +30,9 @@ import { UserListComponent } from './components/user-list/user-list.component';
     UpdateuserComponent,
     UpdatefoodComponent,
     UserListComponent,
+    SearchComponent,
+    FilterPipe,
+    CategoriesComponent,
   
   ],
   imports: [

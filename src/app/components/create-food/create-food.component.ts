@@ -28,7 +28,7 @@ export class CreateFoodComponent implements OnInit{
    this.food.createFood(this.foodobj).subscribe((res:any)=>{
      if(res){
       alert("Food Creation Done");
-      this.router.navigate(['/foods']);
+      this.router.navigate(['/cart']);
      }
      else{
       alert("Failed to create employee");

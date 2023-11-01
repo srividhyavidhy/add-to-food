@@ -39,6 +39,8 @@ deleteFood(_id:string):Observable<any>{
 return this.http.delete(`http://localhost:3000/api/foods/${_id}`)
 }
 
-
+searchFood(title: any): Observable<any> {
+  return this.http.get<any>(`http://localhost:3000/api/foods/?title=${title}`);
+}
 
 }

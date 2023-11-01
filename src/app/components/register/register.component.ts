@@ -53,7 +53,7 @@ deleteUser(event:any, _id:string){
       this.loadUsers();
       if(res){
         alert("User Creation Done");
-        this.router.navigate(['/register']);
+        this.router.navigate(['/userlist']);
        }
        else{
         alert("Failed to create employee");

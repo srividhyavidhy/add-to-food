@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FoodService } from './services/food.service';
 
 @Component({
@@ -8,6 +8,6 @@ import { FoodService } from './services/food.service';
 })
 export class AppComponent {
   title = 'add-to-food';
-
+  @Input() name: string | undefined;
   }
 

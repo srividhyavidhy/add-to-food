@@ -1,38 +1,25 @@
-
-<div class="container">
-    <div class="foodHeading text-center">
-        <h3 class="mb-3">Exclusive Foods</h3>
-        <ul class="list-unstyled d-flex flex-md-row justify-content-center">
-            <li *ngFor="let category of categorys" (click)="getFoodCategory(category._id) " >
-                <a class="m-4 text-decoration-none text-info fw-semibold" [ngClass]="selectedCategory == category._id?'text-danger':'text-info'">
-                   {{category.name}}
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
-<div class="container text-center ">
-    <div class="btn btn-primary" routerLink="/create-food">Add-Food</div>
-<div class="p-3">
-    <div class="row mt-3">
-        <div class="col-lg-3 col-md-0" *ngFor="let food of foodArray">
+<div class="container text-center  " style="width: 100%;">
+<div class="p-2">
+    <div class="row mt-2">
+        <div class="col-lg-3 col-md-0" *ngFor="let foods of foodArray">
             <div class="box-shadow">
                 <div class="card mt-2">
-                    <img class="card-img-top img-fluid" src="{{food.image}}">
+                    <img class="card-img-top img-fluid" src="{{foods.image}}">
                 </div>
                 <div class="card-body">
-                    <h6 class="card-titel">{{food.name}}</h6>
-                    <h6 class="card-text">{{food.quantity}}</h6>
-                    <p class="text-success ms-0">35% off<span class="p-3">{{food.price | currency:'INR'}}</span> </p>
+                    <h6 class="card-titel">{{foods.name}}</h6>
+                    <h6 class="card-text">{{foods.quantity}}</h6>
+                    <p class="text-success ms-0">35% off<span class="p-3">{{foods.price | currency:'INR'}}</span> </p>
                     
                 </div>
+                <button class="btn btn-success" (click)="addToCart(foods)" >ADD-TO-CART</button>
                 <div class="model-footer">
-                    <a routerLink="/updatefood/{{food._id}}">
+                    <a routerLink="/updatefood/{{foods._id}}">
                         <i class="bi bi-pencil mx-2" style="font-size: 20px;  color: rgb(67, 18, 112); cursor: pointer;">
                         </i>
                     </a>
                         <i class="bi bi-trash3" style="font-size: 20px; color: red; cursor: pointer;" 
-                        (click)="deleteFood($event, food._id)" >
+                        (click)="deleteFood($event, foods._id)" >
                     </i>
                 </div>
             </div>

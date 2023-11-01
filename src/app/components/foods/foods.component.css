@@ -1,11 +1,17 @@
+.container{
+   background-color: aquamarine;
+   max-width: 100%;
+}
+
 .foodHeading h3{
     color: blue;
 }
 .img-fluid{
     width: 320px;
     height: 200px;
+    object-fit: cover;
     border-radius: 5px;
-    margin-top: 0;
+    
     
 }
 .card-body{
