@@ -1,27 +1,32 @@
-<form [formGroup]="loginForm" (ngSubmit)="SubmitForm">
-  
-<div class="container">
-  <div class="model-body">
-      <div class="container-fluid ">
-          <div class="row">
-              <div class="col-10">
-                  
-                  <label for="email">Email</label>
-                  <input type="email" name="email" formGroupName="email" class="form-control">
-                  <label for="password">Password</label>
-                  <input type="password" name="password" formGroupName="password" class="form-control">
-                 
-  
-              </div>
-          </div>
-      </div>
-      <div class="model-footer">
-          <button type="button"  class="btn btn-secondary md-3">Reset</button>
-          <button type="submit"  class="btn btn-primary col-lg-3" >Login</button>
+<div class="container text-center">
+    <div class="d-flex flex-row mb-3">
+        <div class="p-2">
+            <img src="https://www.shutterstock.com/image-vector/man-key-near-computer-account-260nw-1499141258.jpg"
+             alt="Image" class="image" height="250px mt-2">
         </div>
-     
-     </div>
-</div>
-</form>
+        <div class="p-4"><div class="container col-10 float-sm-end">
+            <div class="model-body">
+                <div class="container-fluid ">
+                    
+                    <div class="row">
+                        <div class="col-20">
+                            <label for="email">Email</label>
+                            <input [(ngModel)]="loginForm.email" type="email" class="form-control">
+                            <label for="password">Password</label>
+                            <input [(ngModel)]="loginForm.password" type="password" class="form-control">
+                            
+            
+                        </div>
+                    </div>
+                </div>
+                <div class="model-footer p-4">
+                    <button type="button"  class="btn btn-danger md-5 me-2" routerLink="/userlist">cancle</button>
+                    <button type="button"  class="btn btn-primary col-lg-6" (click)="loginUser()">Login</button>
+                 
+                    <a class="password ms-10 p-4 " style="color:red">Forgot <span href="#">Password?</span> </a>
+                  </div>
+    </div> 
+    </div>
         
-       
+      </div>
+</div>
